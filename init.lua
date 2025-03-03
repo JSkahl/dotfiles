@@ -77,6 +77,7 @@ require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth',
   'xiyaowong/transparent.nvim',
+  'norcalli/nvim-colorizer.lua',
   {
     'nvim-lua/plenary.nvim',
     lazy = true, -- It's only loaded when needed
