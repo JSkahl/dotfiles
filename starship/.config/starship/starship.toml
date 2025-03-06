@@ -1,0 +1,148 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](color1)\
+$os\
+\
+\
+\
+$username\
+[](bg:color2 fg:color1)\
+$directory\
+[](fg:color2 bg:color3)\
+$git_branch\
+$git_status\
+[](fg:color3 bg:color4)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:color4 bg:color5)\
+$docker_context\
+[](fg:color5 bg:color6)\
+$time[](color6)\
+$line_break$character"""
+
+palette = 'custom_palette'
+
+[palettes.custom_palette]
+color1 = '#121212'
+color2 = '#313131'
+color3 = '#616161'
+color4 = '#929292'
+color5 = '#C2C2C2'
+color6 = '#F2F2F2'
+text_light_bg = '#121212'
+text_medium_bg = '#313131'
+text_dark_bg = '#C2C2C2'
+
+[os]
+disabled = false
+style = "bg:color1 fg:text_dark_bg"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+Mint = "󰣭"
+Manjaro = ""
+Linux = "󰌽"
+Android = ""
+Arch = " 󰣇 "
+Debian = "󰣚"
+
+[username]
+show_always = true
+style_user = "bg:color1 fg:text_dark_bg"
+style_root = "bg:color1 fg:text_dark_bg"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:text_dark_bg bg:color2"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:color3"
+format = '[[ $symbol $branch ](fg:text_light_bg bg:color3)]($style)'
+
+[git_status]
+style = "bg:color3"
+format = '[[($all_status$ahead_behind )](fg:text_light_bg bg:color3)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+
+[c]
+symbol = " "
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+
+[php]
+symbol = ""
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+
+[java]
+symbol = " "
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+
+[python]
+symbol = ""
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color4)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:color5"
+format = '[[ $symbol( $context) ](fg:text_light_bg bg:color3)]($style)'
+
+[time]
+disabled = false
+time_format = "%I:%M"
+style = "bg:color6"
+format = '[[  $time ](bold bg:color6 fg:text_light_bg)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[](bold fg:text_dark_bg)'
+error_symbol = '[](bold fg:text_light_bg)'
