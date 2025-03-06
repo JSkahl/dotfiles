@@ -3,9 +3,6 @@
 format = """
 [](color1)\
 $os\
-\
-\
-\
 $username\
 [](bg:color2 fg:color1)\
 $directory\
@@ -137,7 +134,7 @@ format = '[[ $symbol( $context) ](fg:text_light_bg bg:color3)]($style)'
 disabled = false
 time_format = "%I:%M"
 style = "bg:color6"
-format = '[[  $time ](bold bg:color6 fg:text_light_bg)]($style)'
+format = '[[ 󱑂 $time ](bold bg:color6 fg:text_light_bg)]($style)'
 
 [line_break]
 disabled = false
