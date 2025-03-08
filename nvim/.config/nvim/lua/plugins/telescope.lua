@@ -1,132 +1,37 @@
 return {
-  'nvim-telescope/telescope.nvim',
-  version = '0.1.x',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    {
-      'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'make',
-      config = function()
-        require('telescope').load_extension 'fzf'
-      end,
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.8',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
-    'nvim-telescope/telescope-symbols.nvim',
-  },
-  opts = {
-    pickers = {
-      find_files = {
-        theme = 'ivy',
-      },
-      buffers = {
-        theme = 'ivy',
-      },
-      git_files = {
-        theme = 'ivy',
-      },
-    },
-  },
-  config = true,
-  -- cmd = { "TodoTelescope" },
-  keys = {
-    {
-      '<leader>bb',
-      function()
-        require('telescope.builtin').buffers()
-      end,
-      desc = 'Telescope buffers',
-    },
-    {
-      '<leader>ff',
-      function()
+    config = function()
+      require('telescope').setup {
+        pickers = {
+          find_files = {
+            theme = 'ivy',
+          },
+        },
+        extensions = {
+          fzf = {},
+        },
+      }
+
+      require('telescope').load_extension 'fzf'
+
+      vim.keymap.set('n', '<space>fh', require('telescope.builtin').help_tags)
+      vim.keymap.set('n', '<space>fd', require('telescope.builtin').find_files)
+      vim.keymap.set('n', '<space>en', function()
         require('telescope.builtin').find_files {
-          find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+          cwd = vim.fn.stdpath 'config',
         }
-      end,
-      desc = 'Find all files',
-    },
-    {
-      '<leader>fg',
-      function()
-        require('telescope.builtin').git_files()
-      end,
-      desc = 'Find in git files',
-    },
-    {
-      '<leader><space>',
-      function()
-        local _, ret, _ = require('telescope.utils').get_os_command_output { 'git', 'rev-parse', '--is-inside-work-tree' }
-        if ret == 0 then
-          require('telescope.builtin').git_files()
-        else
-          require('telescope.builtin').find_files {
-            find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
-          }
-        end
-      end,
-      desc = 'Find in project files (if not git, find all files)',
-    },
-    {
-      '<leader>fh',
-      function()
-        require('telescope.builtin').oldfiles()
-      end,
-      desc = 'Find file in history',
-    },
-    {
-      '<leader>fp',
-      function()
+      end)
+      vim.keymap.set('n', '<space>ep', function()
         require('telescope.builtin').find_files {
-          prompt_title = '< VimRC >',
-          cwd = '$HOME/.config/nvim',
+          cwd = vim.fn.stdpath 'config',
         }
-      end,
-      desc = 'Find file in vim config',
-    },
-    {
-      '<leader>fd',
-      function()
-        require('telescope.builtin').find_files {
-          find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
-          prompt_title = '< Dotfiles >',
-          cwd = '$HOME/dotfiles',
-        }
-      end,
-      desc = 'Find file in dot files',
-    },
-    {
-      '<leader>hh',
-      function()
-        require('telescope.builtin').help_tags()
-      end,
-      desc = 'Search in help',
-    },
-    {
-      '<leader>ii',
-      '<Cmd>Telescope symbols<cr>',
-      desc = 'Search in help',
-    },
-    {
-      '<leader>ss',
-      function()
-        require('telescope.builtin').grep_string {
-          shorten_path = true,
-          word_match = '-w',
-          only_sort_text = true,
-        }
-      end,
-      desc = 'Search for word',
-    },
-    {
-      '<leader>gs',
-      function()
-        require('telescope.builtin').live_grep {
-          shorten_path = true,
-          word_match = '-w',
-          only_sort_text = true,
-          search = "''",
-        }
-      end,
-      desc = 'Grep for word in project',
-    },
+      end)
+    end,
   },
 }
