@@ -14,7 +14,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 alias neofetch='neofetch --source ~/.config/neofetch/asciis/tux.txt'
 alias shutdown='poweroff'
@@ -30,3 +29,6 @@ export NVM_DIR="$HOME/.nvm"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 PATH="~/.nvm/versions/node/v12.22.1/bin:$PATH"
+
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export HYPRSHOT_DIR=~/Screenshots
