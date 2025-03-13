@@ -2,7 +2,7 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": false,
-        "modules-left": ["custom/notification","clock","custom/pacman","tray"],
+        "modules-left": ["custom/notification","custom/date","custom/endpoint","clock","tray"],
         "modules-center": ["hyprland/workspaces"],
         "modules-right": ["group/expand","bluetooth","network","battery"],
 
@@ -19,18 +19,12 @@
             }
         },
         "clock": {
-            "format": "{:%I:%M:%S %p} ",
-            "interval": 1,   
-            "tooltip-format": "<tt>{calendar}</tt>",
-            "calendar": {
-                "format": {
-                    "today": "<span color='#fAfBfC'><b>{}</b></span>"
-                }
-            },
-            "actions": {
-                "on-click-right": "shift_down",
-                "on-click": "shift_up"
-            }
+            "format": "{:%H:%M:%S}",
+            "interval": 1,
+        },
+        "custom/date": {
+            "format": "{}",
+            "exec": "date +'%d/%m/%Y'",
         },
         "network": {
             "format-wifi": " ",
