@@ -8,6 +8,9 @@
 window#waybar{
     all:unset;
 }
+window#calendar {
+    border: none;
+}
 .modules-left {
     padding:7px;
     margin:10 0 5 10;
