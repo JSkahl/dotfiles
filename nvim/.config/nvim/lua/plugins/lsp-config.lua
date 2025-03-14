@@ -11,6 +11,11 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
+      ensure_installed = {
+        "ast_grep",
+        "lua_ls",
+        "volar",
+      },
     },
   },
   {
@@ -27,17 +32,11 @@ return {
 
       local lspconfig = require("lspconfig")
 
-      lspconfig.tailwindcss.setup({
-        capabilities = capabilities
-      })
-      lspconfig.ruby_lsp.setup({
-        capabilities = capabilities,
-        cmd = { "/home/typecraft/.asdf/shims/ruby-lsp" }
-      })
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities
-      })
+      lspconfig.lua_ls.setup({ capabilities = capabilities })
+      lspconfig.ast_grep.setup({ capabilities = capabilities })
+      lspconfig.vuels.setup({ capabilities = capabilities })
 
+      -- Keys
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
