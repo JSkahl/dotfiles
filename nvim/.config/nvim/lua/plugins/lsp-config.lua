@@ -15,6 +15,7 @@ return {
         "ast_grep",
         "lua_ls",
         "volar",
+        "eslint",
       },
     },
   },
@@ -35,6 +36,7 @@ return {
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.ast_grep.setup({ capabilities = capabilities })
       lspconfig.vuels.setup({ capabilities = capabilities })
+      lspconfig.eslint.setup({ capabilities = capabilities })
 
       -- Keys
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
