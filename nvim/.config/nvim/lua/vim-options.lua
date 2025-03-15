@@ -7,6 +7,8 @@ vim.g.mapleader = " "
 vim.opt.laststatus = 3
 vim.opt.showmode = false
 vim.opt.swapfile = false
+vim.opt.cursorline = true
+vim.opt.fillchars:append { eob = " " }
 vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)

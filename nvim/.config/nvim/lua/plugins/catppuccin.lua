@@ -10,11 +10,13 @@ return {
         transparent_background = true,
         custom_highlights = function(colors)
           return {
-            LineNr = { fg = colors.overlay1 },                    -- Change line number color
-            CursorLineNr = { fg = colors.lavender, bold = true }, -- Highlighted line number
-            VertSplit = { fg = colors.overlay0 },                 -- Split border color
-            WinSeparator = { fg = colors.overlay0 },              -- Window separator (useful for Explorer)
-            SpecialKey = { fg = colors.lavender },                -- Paths and comments
+            LineNr = { fg = colors.overlay1 },
+            CursorLine = { bg = "NONE" },
+            CursorLineNr = { fg = colors.flamingo },
+            VertSplit = { fg = colors.overlay0 },
+            WinSeparator = { fg = colors.overlay0 },
+            SpecialKey = { fg = colors.lavender },
+            Visual = { bg = colors.overlay0, fg = colors.text },
           }
         end,
       })

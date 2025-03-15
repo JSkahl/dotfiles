@@ -41,6 +41,6 @@ return {
     { "<leader><leader>", function() Snacks.picker.recent() end,      desc = "Recent Files" },
     { "<leader>fb",       function() Snacks.picker.buffers() end,     desc = "Buffers" },
     { "<leader>fg",       function() Snacks.picker.grep() end,        desc = "Grep Files" },
-    { "<C-n>",            function() Snacks.explorer() end,           desc = "Explorer" },
+    { "<C-e>",            function() Snacks.explorer() end,           desc = "Explorer" },
   }
 }
