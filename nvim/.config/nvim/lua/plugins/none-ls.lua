@@ -15,8 +15,7 @@ return {
 				null_ls.builtins.formatting.isort,
 
 				-- Diagnostics
-				null_ls.builtins.diagnostics.erb_lint,
-        require("none-ls.diagnostics.eslint_d")
+        require("none-ls.diagnostics.eslint_d"),
 			},
 		})
 
