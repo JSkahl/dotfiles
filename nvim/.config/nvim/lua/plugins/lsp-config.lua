@@ -35,8 +35,18 @@ return {
 
       lspconfig.lua_ls.setup({ capabilities = capabilities })
       lspconfig.ast_grep.setup({ capabilities = capabilities })
-      lspconfig.vuels.setup({ capabilities = capabilities })
       lspconfig.eslint.setup({ capabilities = capabilities })
+      lspconfig.volar.setup({
+        capabilities = capabilities,
+        filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+        init_options = {
+          typescript = {
+            tsdk = vim.fn.expand(
+              "~/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib"
+            ),
+          },
+        },
+      })
 
       -- Keys
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -44,7 +54,7 @@ return {
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
       vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-      vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, {})
+      vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, {})
     end,
   },
 }
