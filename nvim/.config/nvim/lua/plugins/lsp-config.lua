@@ -12,6 +12,7 @@ return {
 		opts = {
 			auto_install = true,
 			ensure_installed = {
+        "ast_grep",
 				"lua_ls",
 				"volar",
 				"eslint",
