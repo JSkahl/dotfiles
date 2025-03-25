@@ -87,43 +87,43 @@ format = '[[ $symbol( $version) ](fg:text_light_bg bg:color4)]($style)'
 
 [c]
 symbol = " "
-style = "bg:color3"
-format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color4)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:color3"
-format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color4)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:color3"
-format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color4)]($style)'
 
 [php]
 symbol = ""
-style = "bg:color3"
-format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color4)]($style)'
 
 [java]
 symbol = " "
-style = "bg:color3"
-format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color4)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:color3"
-format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color4)]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:color3"
-format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color4)]($style)'
 
 [python]
 symbol = ""
-style = "bg:color3"
-format = '[[ $symbol( $version) ](fg:text_light_bg bg:color3)]($style)'
+style = "bg:color4"
+format = '[[ $symbol( $version) ](fg:text_light_bg bg:color4)]($style)'
 
 [docker_context]
 symbol = ""
