@@ -1,31 +1,28 @@
 return {
+  {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    lazy = false, -- neo-tree will lazily load itself
-    ---@module "neo-tree"
-
-  config = function()
-    require("neo-tree").setup()
-
-    vim.keymap.set("n", "<C-b>", "<Cmd>Neotree toggle<CR>")
-    vim.keymap.set("n", "<C-e>", "<Cmd>Neotree<CR>")
-  end,
-
-  opts = {
-    window = {
-      position = "right",
+    cmd = "Neotree",
+    keys = {
+      { "<C-b>", "<cmd>Neotree toggle position=right<CR>", desc = "Toggle Neo-tree (Right)" },
+      { "<C-e>", "<cmd>Neotree focus<CR>", desc = "Focus Neo-tree" },
     },
-  },
-
-  filesystem = {
-    filtered_items = {
-      hide_dotfiles = false,
-      hide_by_name = {
-        ".git",
-      },
-      always_show = {
-        ".env",
-      },
-    },
+    config = function()
+      require("neo-tree").setup({
+        filesystem = {
+          filtered_items = {
+            visible = true, -- Show dotfiles
+            hide_dotfiles = false,
+            hide_gitignored = false,
+          },
+          follow_current_file = {
+            enabled = true, -- Highlights the current file
+          },
+          hijack_netrw_behavior = "disabled", -- Don't auto-open Neo-tree
+        },
+        window = {
+          position = "right", -- Always open on the right
+        },
+      })
+    end,
   },
 }
