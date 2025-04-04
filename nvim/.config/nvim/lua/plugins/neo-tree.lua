@@ -3,7 +3,7 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     cmd = "Neotree",
     keys = {
-      { "<C-b>", "<cmd>Neotree toggle position=right<CR>", desc = "Toggle Neo-tree (Right)" },
+      { "<leader><C-b>", "<cmd>Neotree toggle position=right<CR>", desc = "Toggle Neo-tree (Right)" },
       { "<C-e>", "<cmd>Neotree focus<CR>", desc = "Focus Neo-tree" },
     },
     config = function()
