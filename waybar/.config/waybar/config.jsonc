@@ -3,6 +3,8 @@
 	"modules-left": ["hyprland/workspaces"],
 	"modules-center": ["hyprland/window"],
 	"modules-right": ["bluetooth", "pulseaudio", "network", "battery", "clock"],
+
+
 	"clock": {
 		"format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -11,6 +13,8 @@
       "on-click": "shift_up",
     },
 	},
+
+
 	"battery": {
 		"states": {
 			"warning": 30,
@@ -26,27 +30,31 @@
 		"format-icons": ["", "", "", "", ""],
 		"tooltip-format": "{time}"
 	},
+
+
 	"network": {
-		"format-wifi": "<span size='13000' foreground='#89dceb'>  </span>{essid}",
-		"format-ethernet": "<span size='13000' foreground='#89dceb'>󰤭  </span> Disconnected",
+		"format-wifi": "<span size='13000' foreground='#89dceb'> </span>",
+		"format-disconnected": "<span size='13000' foreground='#f38ba8'>󰤭 </span>Disconnected",
+		"format-ethernet": "<span size='13000' foreground='#89dceb'></span>",
 		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "<span size='13000' foreground='#f38ba8'>  </span>Disconnected",
-		"tooltip-format-wifi": "Signal Strenght: {signalStrength}%",
+		"tooltip-format-wifi": "{essid}\nSignal Strenght: {signalStrength}%",
     "on-click": "kitty nmtui",
 	},
 
+
 	"pulseaudio": {
-		"format": "{icon}  {volume}%",
-		"format-muted": "",
+		"format": "<span foreground='#b4befe'>{icon} </span> {volume}%",
+		"format-muted": "<span foreground='#b4befe'> </span>",
 		"format-icons": {
-			"default": ["", "", " "]
+			"default": ["", " ", " "]
 		},
 		"on-click": "pavucontrol"
 	},
 
+
   "bluetooth": {
-    "format": "󰂯",
-    "format-disabled": "󰂲",
+    "format": "<span foreground='#cba6f7'>󰂯</span>",
+    "format-disabled": "<span foreground='#cba6f7'>󰂲</span>",
     "on-click": "blueman-manager",
   },
 },
