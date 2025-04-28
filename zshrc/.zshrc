@@ -16,7 +16,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-#alias neofetch='neofetch --source ~/.config/neofetch/asciis/tux.txt'
+alias neofetch='neofetch --source ~/.config/neofetch/asciis/tux.txt'
 alias shutdown='poweroff'
 alias change-wpp='sh ~/.config/hypr/scripts/wallpaper_switcher.sh WALLPAPER='
 alias calendar='sh ~/.config/waybar/scripts/calendar.sh'

@@ -7,7 +7,7 @@ return {
 
     config = function()
       require("catppuccin").setup({
-        transparent_background = true,
+        transparent_background = false,
         custom_highlights = function(colors)
           return {
             LineNr = { fg = colors.overlay1 },
