@@ -31,27 +31,34 @@ return {
             local root = util.root_pattern("jsconfig.json", "package.json", ".git")(vim.fn.getcwd())
 
             -- Configure ts_ls to work in Vue
-            lspconfig.ts_ls.setup({
-                capabilities = capabilities,
-                root_dir = root,
-                -- Tells ts_ls what to load
-                init_options = {
+            if root and vim.fn.filereadable(root .. "/package.json") == 1 then
+                local vue_path = root .. "/node_modules/@vue/typescript-plugin"
+                local ts_path = root .. "/node_modules/typescript/lib"
 
-                    -- Loads vue plugin based on the path provided
-                    plugins = {
-                        {
-                            name = "@vue/typescript-plugin",
-                            location = root .. "/node_modules/@vue/typescript-plugin",
-                            languages = { "vue" },
+                if vim.fn.isdirectory(vue_path) == 1 then
+                    lspconfig.ts_ls.setup({
+                        capabilities = capabilities,
+                        root_dir = root,
+                        -- Tells ts_ls what to load
+                        init_options = {
+
+                            -- Loads vue plugin based on the path provided
+                            plugins = {
+                                {
+                                    name = "@vue/typescript-plugin",
+                                    location = vue_path,
+                                    languages = { "vue" },
+                                },
+                            },
+                            ts_ls = {
+                                tsdk = ts_path,
+                            },
                         },
-                    },
-                    ts_ls = {
-                        tsdk = root .. "/node_modules/typescript/lib",
-                    },
-                },
-                filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-                cmd = { "typescript-language-server", "--stdio" },
-            })
+                        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+                        cmd = { "typescript-language-server", "--stdio" },
+                    })
+                end
+            end
 
             -- Keymaps
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
