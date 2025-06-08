@@ -1,33 +1,35 @@
 return {
-  {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
-    },
-    config = function()
-      require('telescope').setup {
-        defaults = {
-          prompt_prefix = '󰭎 ',
-          selection_caret = '󰭎 ',
-          file_ignore_patterns = { 'node_modules/.*', '.git/.*' },
+	"nvim-telescope/telescope.nvim",
+	tag = "0.1.8",
+	dependencies = {
+		{ "nvim-lua/plenary.nvim" },
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	},
 
-        },
-        extensions = {
-          fzf = {}
-        }
-      }
+	config = function()
+		local builtin = require("telescope.builtin")
+		local telescope = require("telescope")
 
-      require('telescope').load_extension('fzf')
+		-- Keymaps
+		vim.keymap.set("n", "<leader>ff", builtin.find_files, {}) -- Lists files inside dir
+		vim.keymap.set("n", "<leader>fg", builtin.git_files, {}) -- Lists only git files inside dir
+		vim.keymap.set("n", "<leader><leader>", builtin.buffers, {}) -- Lists current opened buffers
+		vim.keymap.set("n", "<leader>fc", function()
+			builtin.find_files({ cwd = vim.fn.stdpath("config") }) -- Lists NeoVim config's files
+		end)
+		vim.keymap.set("n", "<leader>fw", function()
+			builtin.grep_string({ search = vim.fn.input("Grep > ") }) -- Lists files by name
+		end)
 
-      vim.keymap.set("n", "<space>fh", require('telescope.builtin').help_tags)
-      vim.keymap.set("n", "<space>ff", require('telescope.builtin').find_files)
-      vim.keymap.set("n", "<space>en", function()
-        require('telescope.builtin').find_files {
-          cwd = vim.fn.stdpath("config")
-        }
-      end)
-    end
-  }
+        -- Visual
+		telescope.setup({
+			defaults = {
+				borderchars = {
+					prompt = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+					results = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+					preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+				},
+			},
+		})
+	end,
 }
