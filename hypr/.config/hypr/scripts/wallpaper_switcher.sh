@@ -3,9 +3,8 @@
 # Get default wallpaper path
 used_wallpaper=${WALLPAPER:-"$(cat ~/.cache/swww/eDP-1)"}
 
-
 # Set wallpaper
-swww img "$used_wallpaper"
+# swww img "$used_wallpaper"
 
 # Set color pallete based on the wallpaper
 wal -q -i "$used_wallpaper"
