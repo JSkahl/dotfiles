@@ -22,6 +22,7 @@ return {
             lspconfig.lua_ls.setup({ capabilities = capabilities })
             lspconfig.ast_grep.setup({ capabilities = capabilities })
             lspconfig.eslint.setup({ capabilities = capabilities })
+            lspconfig.bacon.setup({ capabilities = capabilities })
 
             -- Configuration for better experience with Vue and relationed
             -- Configure vue_ls
