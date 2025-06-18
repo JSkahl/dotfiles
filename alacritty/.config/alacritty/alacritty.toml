@@ -1,0 +1,10 @@
+[font]
+normal = { family = "CaskaydiaCove Nerd Font", style = "Regular" }
+
+[general]
+import = [
+    "~/.config/alacritty/theme.toml"
+]
+
+[window]
+padding = { x = 4, y = 1 }

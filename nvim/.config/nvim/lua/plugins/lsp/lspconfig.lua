@@ -26,7 +26,7 @@ return {
 
             -- Configuration for better experience with Vue and relationed
             -- Configure vue_ls
-            lspconfig.vue_ls.setup({ capabilities = capabilities })
+            lspconfig.volar.setup({ capabilities = capabilities })
 
             -- Defines root of dir to find Vue LS
             local root = util.root_pattern("jsconfig.json", "package.json", ".git")(vim.fn.getcwd())

@@ -1,0 +1,24 @@
+# Custom Theme (based on provided color scheme)
+
+# Default colors
+[colors.primary]
+background = '#282C34'
+foreground = '#ABB2BF'
+
+# Cursor colors
+[colors.cursor]
+cursor = '#ABB2BF'
+text = '#282C34'
+
+# Selection colors
+[colors.selection]
+background = '#ABB2BF'
+text = '#282C34'
+
+# URL color (used when hovering with mouse)
+[colors.vi_mode_cursor]
+text = '#282C34'
+cursor = '#ABB2BF'
+
+# Tab bar colors (ma
+

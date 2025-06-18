@@ -23,17 +23,10 @@ source $ZSH/oh-my-zsh.sh
 
 alias neofetch='neofetch --source ~/.config/neofetch/asciis/tux.txt'
 alias shutdown='poweroff'
-alias change-wpp='sh ~/.config/hypr/scripts/wallpaper_switcher.sh'
-alias calendar='sh ~/.config/waybar/scripts/calendar.sh'
-alias see='timg -p kitty'
-
-eval "$(starship init zsh)"
-#neofetch
-
-
-#export STARSHIP_CONFIG=~/.config/starship/starship.toml
-export HYPRSHOT_DIR=~/Screenshots
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+neofetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
