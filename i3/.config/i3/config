@@ -1,6 +1,10 @@
+#################
+#               #
+#   i3 config   #
+#               #
+#################
+
 set $mod Mod4
-
-
 
 #############
 #           #
@@ -8,9 +12,10 @@ set $mod Mod4
 #           #
 #############
 
-exec_always --no-startup-id feh --bg-scale /home/j/pictures/switzerland.jpg
+exec_always --no-startup-id feh --bg-scale /home/j/pictures/gandalf_balrog_in_moria.jpg
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id "setxkbmap -layout br"
+exec_always --no-startup-id picom
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -28,14 +33,17 @@ floating_modifier $mod
 #####################
 
 # define colors
-client.focused #e0e0e0 #e0e0e0 #e0e0e0 #e0e0e0 #e0e0e0
-client.unfocused #595959 #595959 #595959 #595959 #595959
-client.urgent #ff0000 #e0e0e0 #e0e0e0 #e0e0e0 #e0e0e0
+    # client.focused #e0e0e0 #e0e0e0 #e0e0e0 #e0e0e0 #e0e0e0
+    # client.unfocused #595959 #595959 #595959 #595959 #595959
+    # client.urgent #ff0000 #e0e0e0 #e0e0e0 #e0e0e0 #e0e0e0
 
 font pango:CaskaydiaCove Nerd Font 12
 
-# customize border
-default_border pixel 2
+    # customize border
+    # default_border pixel 2
+default_border none
+gaps inner 10px
+gaps outer 5px
 
 
 
@@ -48,6 +56,7 @@ default_border pixel 2
 bindsym $mod+t exec alacritty
 bindsym $mod+q kill
 bindsym $mod+b exec firefox
+bindsym $mod+n exec neovide
 bindsym $mod+Shift+e exec "rofi -show run"
 
 # print binds
@@ -143,10 +152,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym h resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym h resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"

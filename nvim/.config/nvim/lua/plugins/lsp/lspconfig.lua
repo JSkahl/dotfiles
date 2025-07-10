@@ -1,32 +1,32 @@
 return {
-    {
-        "neovim/nvim-lspconfig",
-        lazy = false,
-        config = function()
-            local cmp_nvim_lsp = require("cmp_nvim_lsp")
-            local lspconfig = require("lspconfig")
-            local util = require("lspconfig.util")
+	{
+		"neovim/nvim-lspconfig",
+		lazy = false,
+		config = function()
+			local cmp_nvim_lsp = require("cmp_nvim_lsp")
+			local lspconfig = require("lspconfig")
+			local util = require("lspconfig.util")
 
-            -- Mix NeoVim built-in LSP capabilities with nvim-cmp's for autocomplete
-            local capabilities = vim.tbl_deep_extend(
-                "force",
-                {},
-                vim.lsp.protocol.make_client_capabilities(),
-                cmp_nvim_lsp.default_capabilities()
-            )
+			-- Mix NeoVim built-in LSP capabilities with nvim-cmp's for autocomplete
+			local capabilities = vim.tbl_deep_extend(
+				"force",
+				{},
+				vim.lsp.protocol.make_client_capabilities(),
+				cmp_nvim_lsp.default_capabilities()
+			)
 
-            -- Configure general LSP's
-            lspconfig.html.setup({ capabilities = capabilities })
-            lspconfig.cssls.setup({ capabilities = capabilities })
-            lspconfig.jsonls.setup({ capabilities = capabilities })
-            lspconfig.lua_ls.setup({ capabilities = capabilities })
-            lspconfig.ast_grep.setup({ capabilities = capabilities })
-            lspconfig.eslint.setup({ capabilities = capabilities })
-            lspconfig.bacon.setup({ capabilities = capabilities })
+			-- Configure general LSP's
+			lspconfig.html.setup({ capabilities = capabilities })
+			lspconfig.cssls.setup({ capabilities = capabilities })
+			lspconfig.jsonls.setup({ capabilities = capabilities })
+			lspconfig.lua_ls.setup({ capabilities = capabilities })
+			lspconfig.ast_grep.setup({ capabilities = capabilities })
+			lspconfig.eslint.setup({ capabilities = capabilities })
 
             -- Configuration for better experience with Vue and relationed
+
             -- Configure vue_ls
-            lspconfig.volar.setup({ capabilities = capabilities })
+            lspconfig.vue_ls.setup({ capabilities = capabilities })
 
             -- Defines root of dir to find Vue LS
             local root = util.root_pattern("jsconfig.json", "package.json", ".git")(vim.fn.getcwd())
@@ -62,12 +62,12 @@ return {
             end
 
             -- Keymaps
-            vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-            vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-            vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-            vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
-            vim.keymap.set("n", "<leader>md", vim.lsp.buf.rename, {})
-        end,
-    },
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+			vim.keymap.set("n", "<leader>md", vim.lsp.buf.rename, {})
+		end,
+	},
 }

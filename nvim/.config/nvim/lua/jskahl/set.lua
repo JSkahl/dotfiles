@@ -25,3 +25,31 @@ vim.opt.incsearch = true
 -- Visual stuff
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 9
+
+-- Neovide
+if vim.g.neovide then
+    vim.opt.linespace = 6
+
+    local default_font_size = 12
+    local font_name = "CaskaydiaCove Nerd Font"
+    vim.g.font_size = default_font_size
+
+    local function set_font_size(size)
+      vim.g.font_size = size
+      vim.o.guifont = string.format("%s:h%d", font_name, size)
+    end
+
+    vim.keymap.set("n", "<C-=>", function()
+      set_font_size(vim.g.font_size + 1)
+    end)
+
+    vim.keymap.set("n", "<C-->", function()
+      set_font_size(vim.g.font_size - 1)
+    end)
+
+    vim.keymap.set("n", "<C-0>", function()
+      set_font_size(default_font_size)
+    end)
+
+    set_font_size(default_font_size)
+end

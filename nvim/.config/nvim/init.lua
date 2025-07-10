@@ -2,4 +2,4 @@ require("jskahl.remap")
 require("jskahl.set")
 require("jskahl.lazy")
 
-vim.cmd("colorscheme onedark")
+vim.cmd("colorscheme cyberdream")
