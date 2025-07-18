@@ -12,6 +12,7 @@ set $mod Mod4
 #           #
 #############
 
+exec --no-startup-id xset s off -dpms s noblank
 exec_always --no-startup-id feh --bg-scale /home/j/pictures/gandalf_balrog_in_moria.jpg
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id "setxkbmap -layout br"
@@ -60,9 +61,9 @@ bindsym $mod+n exec neovide
 bindsym $mod+Shift+e exec "rofi -show run"
 
 # print binds
-bindsym $mod+Print exec "maim -s -u | xclip -selection clipboard -t image/png -i"
-bindsym $mode+Shift+Print exec maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym $mode+Control+Shift+Print exec "maim ~/screenshots/$(date +%s).png"
+bindsym $mod+Print exec "maim -s -u | tee ~/screenshots/$(date +%s).png | xclip -selection clipboard -t image/png -i"
+bindsym $mod+Shift+Print exec bash -c 'maim -u -i $(xdotool getactivewindow) | tee ~/screenshots/$(date +%s).png | xclip -selection clipboard -t image/png -i'
+bindsym $mod+Control+Shift+Print exec bash -c 'maim -u ~/screenshots/$(date +%s).png'
 
 # change focus
 bindsym $mod+h focus left
