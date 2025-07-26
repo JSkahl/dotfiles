@@ -19,6 +19,7 @@ return {
                     "markdown_inline",
                     "javascript",
                     "typescript",
+                    "vue",
                 },
                 auto_install = true,
 
