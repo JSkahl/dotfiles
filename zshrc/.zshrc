@@ -21,7 +21,6 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias neofetch='neofetch --source ~/.config/neofetch/asciis/gandalf.txt'
 alias shutdown='poweroff'
-alias fin="sc-im"
 alias financial="sc-im ~/financial/2025/julho.sc"
 
 
