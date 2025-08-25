@@ -1,9 +1,10 @@
-pkill polybar
+DIR="$HOME/.config/polybar"
+killall -q polybar
+while pgrep -u "$UID" -x polybar >/dev/null; do
+  sleep 0.1
+done
 
-if type "xrandr"; then
-    for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do 
-        MONITOR=$m polybar --reload kahl &
-    done
-else
-    polybar --reload kahl &
-fi
+polybar -q ws -c "$DIR/config.ini" &
+polybar -q date -c "$DIR/config.ini" &
+polybar -q laptop -c "$DIR/config.ini" &
+polybar -q hw -c "$DIR/config.ini" &
