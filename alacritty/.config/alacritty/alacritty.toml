@@ -3,7 +3,7 @@ normal = { family = "CaskaydiaCove Nerd Font", style = "Regular" }
 
 [general]
 import = [
-    "~/.config/alacritty/theme.toml"
+    "~/.config/alacritty/themes/frappe.toml"
 ]
 
 [window]
