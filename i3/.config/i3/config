@@ -12,14 +12,17 @@ set $mod Mod4
 #           #
 #############
 
-exec --no-startup-id xset s off -dpms s noblank
-exec_always --no-startup-id feh --bg-scale /home/j/pictures/gandalf_balrog_in_moria.jpg
+
+exec_always --no-startup-id /home/j/.config/i3/scripts/wpp.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+exec --no-startup-id xset s off -dpms s noblank
 exec_always --no-startup-id "setxkbmap -layout br"
 exec_always --no-startup-id picom
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
+exec --no-startup-id glance --config /home/j/.config/glance/glance.yml
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -45,6 +48,7 @@ font pango:CaskaydiaCove Nerd Font 12
 default_border none
 gaps inner 10px
 gaps outer 5px
+gaps top 40
 
 
 
