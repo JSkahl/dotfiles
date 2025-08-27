@@ -10,7 +10,7 @@ profile=$(find ~/.mozilla/firefox -maxdepth 1 -type d -name "*.default-release" 
 
 set_dark() {
     echo "Alterando wallpaper..."
-    echo "$HOME/pictures/queen_garden.png" > "$HOME/.cache/wallpaper"
+    echo "$HOME/pictures/hk_dark.png" > "$HOME/.cache/wallpaper"
     sleep 0.2
 
     echo "Alterando Polybar..."
@@ -35,7 +35,7 @@ set_dark() {
 
 set_light() {
     echo "Alterando wallpaper..."
-    echo "$HOME/pictures/hk_light.png" > "$HOME/.cache/wallpaper"
+    echo "$HOME/pictures/hk_light.jpg" > "$HOME/.cache/wallpaper"
     sleep 0.2
 
     echo "Alterando Polybar..."

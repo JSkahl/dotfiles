@@ -19,6 +19,7 @@ alias neofetch='neofetch --source ~/.config/neofetch/asciis/knight.txt'
 alias shutdown='poweroff'
 alias financial="sc-im ~/financial/2025/agosto.sc"
 alias theme="~/scripts/theme.sh"
+alias work="~/scripts/work.sh"
 #alias glance="glance --config ~/.config/glance/glance.yml"
 
 eval "$(starship init zsh)"
