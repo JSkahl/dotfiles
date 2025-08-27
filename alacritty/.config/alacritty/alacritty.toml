@@ -1,5 +1,7 @@
 [font]
 normal = { family = "CaskaydiaCove Nerd Font", style = "Regular" }
+size = 15
+offset = { x = 0, y = 3 }
 
 [general]
 import = [

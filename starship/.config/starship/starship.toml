@@ -1,6 +1,6 @@
 format = """
 $os\
-$username \
+$username  \
 $directory \
 $git_branch \
 $time \
@@ -8,11 +8,11 @@ $cmd_duration \
 $line_break\
 $character"""
 
-palette = "catppuccin_latte"
+palette = "catppuccin_frappe"
 
 [os]
 disabled = false
-style = "bg:surface0 fg:teal"
+style = "bg:crust fg:teal"
 
 [os.symbols]
 Windows = ""
@@ -25,12 +25,12 @@ Arch = "  󰣇  "
 
 [username]
 show_always = true
-style_user = "bg:surface0 fg:text"
-style_root = "bg:surface0 fg:text"
+style_user = "bg:crust fg:text"
+style_root = "bg:crust fg:text"
 format = '[ $user  ]($style)'
 
 [directory]
-style = "bg:surface0 fg:text"
+style = "bg:crust fg:text"
 format = "[  $path  ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -44,18 +44,18 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = "  "
-style = "bg:surface0"
-format = '[[  $symbol $branch  ](fg:text bg:surface0)]($style)'
+style = "bg:crust"
+format = '[[  $symbol $branch  ](fg:text bg:crust)]($style)'
 
 [git_status]
-style = "bg:surface0"
-format = '[[  ($all_status$ahead_behind )  ](fg:text bg:surface0)]($style)'
+style = "bg:crust"
+format = '[[  ($all_status$ahead_behind )  ](fg:text bg:crust)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:surface0"
-format = '[[   $time  ](fg:text bg:surface0)]($style)'
+style = "bg:crust"
+format = '[[   $time  ](fg:text bg:crust)]($style)'
 
 [line_break]
 disabled = false
@@ -92,10 +92,10 @@ overlay1 = "#7f849c"
 overlay0 = "#6c7086"
 surface2 = "#585b70"
 surface1 = "#45475a"
-surface0 = "#313244"
+crust = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
-#surface0 = "#11111b"
+#crust = "#11111b"
 
 [palettes.catppuccin_frappe]
 rosewater = "#f2d5cf"
@@ -120,10 +120,10 @@ overlay1 = "#838ba7"
 overlay0 = "#737994"
 surface2 = "#626880"
 surface1 = "#51576d"
-surface0 = "#414559"
+crust = "#414559"
 base = "#303446"
 mantle = "#292c3c"
-#surface0 = "#232634"
+#crust = "#232634"
 
 [palettes.catppuccin_latte]
 rosewater = "#dc8a78"
@@ -148,10 +148,10 @@ overlay1 = "#8c8fa1"
 overlay0 = "#9ca0b0"
 surface2 = "#acb0be"
 surface1 = "#bcc0cc"
-surface0 = "#ccd0da"
+crust = "#ccd0da"
 base = "#eff1f5"
 mantle = "#e6e9ef"
-#surface0 = "#dce0e8"
+#crust = "#dce0e8"
 
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
@@ -176,7 +176,7 @@ overlay1 = "#8087a2"
 overlay0 = "#6e738d"
 surface2 = "#5b6078"
 surface1 = "#494d64"
-surface0 = "#363a4f"
+crust = "#363a4f"
 base = "#24273a"
 mantle = "#1e2030"
-#surface0 = "#181926"
+#crust = "#181926"
